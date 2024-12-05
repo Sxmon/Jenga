@@ -6,13 +6,26 @@ using namespace std;
 string checkNeighbors(int array[10][3], int row, int col);
 
 int main() {
-    string name1, name2, result;
+    string name1, name2, result, tutrorial;
     int row, column;
 
-    cout << "Welcome to Two Player Jenga!" << endl <<"Please enter Player 1's name:";
+    cout << "Welcome to Two Player Jenga!" << endl <<"Please enter Player 1's name: ";
     cin >> name1;
-    cout << "Please enter Player 2's name:";
+    cout << "Please enter Player 2's name: ";
     cin >> name2;
+
+    cout << "Would you like a tutorial? (y/n): ";
+    cin >> tutrorial;
+
+    if (tutrorial == "y") {
+        cout << "When the game begins Player 1 will be prompted to input the the row number of the block they would like to pull out" << endl;
+        cout << "The rows are numbered starting from the top row being 1 and rising in number as you go down the tower" << endl;
+        cout << "After Player 1 inputs the row of the block they would like to pull out they will be prompted to then input the column number of the block they want to pull out" << endl;
+        cout << "The columns are numbered starting from the left most column being numbered 1 and rising in number as you go right" << endl;
+    }
+
+
+
 
     // Makes an array with a height of 10 and a width of 3
     int array[10][3];
@@ -43,7 +56,6 @@ int main() {
         column = column - 1;
         // Calls the function to check values around the coordinate
         result = checkNeighbors(array, row, column);
-        cout << result << endl;
 
         // Checks if the tower should fall
         if (result == "success") {
@@ -69,7 +81,6 @@ int main() {
         column = column - 1;
         // Calls the function to check values around the coordinate
         result = checkNeighbors(array, row, column);
-        cout << result << endl;
 
         // Checks if the tower should fall
         if (result == "success") {

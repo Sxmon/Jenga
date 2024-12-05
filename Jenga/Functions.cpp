@@ -4,16 +4,6 @@ string checkNeighbors(int array[10][3], int row, int col) {
         return "Invalid coordinates";
     }
 
-    // Checks if the coordinate directly above is 0
-    if (row > 0 && array[row - 1][col] == 0) {
-        return "fail";
-    }
-
-    // Checks if the coordinate below is 0
-    if (row < 9 && array[row + 1][col] == 0) {
-        return "fail";
-    }
-
     // Checks if the coordinate to the left is 0
     if (col > 0 && array[row][col - 1] == 0) {
         return "fail";
